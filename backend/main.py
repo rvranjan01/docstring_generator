@@ -35,8 +35,15 @@ async def upload_file(file: UploadFile = File(...)):
     # Parse Code (AST)
 
     parsed_data = parse_python_code(code)
+    print(f"Parsed Data: {parsed_data}")
+    print(f"File Name: {file.filename}")
+    print(f"File Size: {len(contents)} bytes")
+    print(code)
 
     return {
         "filename": file.filename,
         "functions_found": parsed_data
     }
+
+    
+
